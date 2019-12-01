@@ -57,10 +57,10 @@ const IndexPage = () => {
       <SEO title="Home" />
       <Grid stretched>
         <Grid.Row stretched>
-          <Grid.Column stretched width={4}>
+          <Grid.Column stretched computer={4} only='computer'>
               {renderCard()}
           </Grid.Column>
-          <Grid.Column stretched verticalAlign='middle' width={12}>
+          <Grid.Column stretched verticalAlign='middle' computer={12} mobile={16} tablet={16}>
               {renderAboutMe()}
           </Grid.Column>
         </Grid.Row>
