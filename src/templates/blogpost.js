@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { Grid, Container, Header } from "semantic-ui-react"
+import { DiscussionEmbed } from 'disqus-react' 
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -9,6 +10,11 @@ class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title
+
+    const disqusConfig = {
+      shortname: 'www-chrisheppell-co-uk',
+      config: { identifier: post.id, title: post.frontmatter.title },
+    }
 
     return (
         <Layout location={this.props.location} title={siteTitle}>
@@ -31,6 +37,7 @@ class BlogPostTemplate extends React.Component {
                     <Container style={{paddingBottom: '1em'}} dangerouslySetInnerHTML={{ __html: post.html }}/>
                 </Grid.Row>
             </Grid>
+            <DiscussionEmbed {...disqusConfig} /> 
         </Layout>
     )}
 }
