@@ -1,35 +1,40 @@
+import React from "react"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import React from "react"
+import { Menu, Segment, Container } from 'semantic-ui-react'
+import { Location } from '@reach/router'
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
+const Header = ({ siteTitle }) => {
+  return <Segment inverted>
+    <Container>
+      <Location>
+        {({ location}) => {
+          return <Menu inverted pointing secondary>
+            <Menu.Item header>Chris Heppell</Menu.Item>
+            <Link to='/'>
+              <Menu.Item
+                name='home'
+                active={location.pathname === '/'}
+              />
+            </Link>
+            <Link to='/blog'>
+              <Menu.Item
+                name='blog'
+                active={location.pathname.startsWith('/blog')}
+              />
+            </Link>
+            <Link to='/about'>
+              <Menu.Item
+                name='about'
+                active={location.pathname === '/about'}
+              />
+            </Link>
+          </Menu>   
+        }}
+      </Location>
+    </Container>
+  </Segment>
+}
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
