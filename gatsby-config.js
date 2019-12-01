@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Chris Heppell | Software Engineer`,
-    description: `Personal website for Chris Heppell - Softwre Engineer.`,
+    description: `Personal website for Chris Heppell - Software Engineer.`,
     author: `Chris Heppell`,
   },
   plugins: [
