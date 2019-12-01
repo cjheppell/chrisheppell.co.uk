@@ -23,12 +23,6 @@ const Header = ({ siteTitle }) => {
                 active={location.pathname.startsWith('/blog')}
               />
             </Link>
-            <Link to='/about'>
-              <Menu.Item
-                name='about'
-                active={location.pathname === '/about'}
-              />
-            </Link>
           </Menu>   
         }}
       </Location>

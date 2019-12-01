@@ -1,8 +1,7 @@
 import React from "react"
-import { Link } from "gatsby"
 import { useStaticQuery, graphql } from "gatsby"
 
-import { Card, Image, Icon, Grid, Container, Header } from "semantic-ui-react"
+import { Card, Grid, Container, Header } from "semantic-ui-react"
 import Img from "gatsby-image"
 
 import Layout from "../components/layout"
