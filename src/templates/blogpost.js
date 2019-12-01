@@ -28,7 +28,7 @@ class BlogPostTemplate extends React.Component {
                     </Grid.Column>
                 </Grid.Row>
                 <Grid.Row>
-                    <Container dangerouslySetInnerHTML={{ __html: post.html }}/>
+                    <Container style={{paddingBottom: '1em'}} dangerouslySetInnerHTML={{ __html: post.html }}/>
                 </Grid.Row>
             </Grid>
         </Layout>
