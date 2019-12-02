@@ -4,6 +4,8 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { Grid, Header, Container } from "semantic-ui-react"
 
+import './blogpost.css'
+
 const BlogIndex = () => {
     const data = useStaticQuery(graphql`
 query {
@@ -35,7 +37,7 @@ query {
     return (
       <Layout title={siteTitle}>
         <SEO title="All posts" />
-        <Container>
+        <Container className='blogposts'>
             <Grid>
                 {posts.map(({ node }) => {
                     const title = node.frontmatter.title || node.fields.slug
@@ -50,16 +52,12 @@ query {
                                             </Link>
                                         </Header>
                                         <p>
-                                            {node.frontmatter.date}
+                                            {node.frontmatter.date}<br/>
                                         </p>
-                                    </Grid.Column>
-                                </Grid.Row>
-                                <Grid.Row>
-                                    <Grid.Column>
-                                        <p
-                                        dangerouslySetInnerHTML={{
-                                            __html: node.frontmatter.description || node.excerpt,
-                                        }}
+                                        <Container className="blogpost"
+                                            dangerouslySetInnerHTML={{
+                                                __html: node.frontmatter.description || node.excerpt,
+                                            }}
                                         />
                                     </Grid.Column>
                                 </Grid.Row>
