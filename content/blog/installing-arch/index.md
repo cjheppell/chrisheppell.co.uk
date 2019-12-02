@@ -37,7 +37,7 @@ Needless to say, I failed a couple of times.
 
 ### Forgetting to mark the root device as bootable
 
-The first issue I had was forgetting to makr the root device as bootable. Formatting via `fdisk` went fine by following
+The first issue I had was forgetting to mark the root device as bootable. Formatting via `fdisk` went fine by following
 the [Arch Linux install instructions](https://wiki.archlinux.org/index.php/installation_guide). I expected to run into issues given that my laptop doesn't have EFI, but uses old-school
 BIOS. This never happened, and configuring for MBR worked just fine.
 
